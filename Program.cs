@@ -7,11 +7,15 @@
             // Задание 1
             int a,b;
 
+
             while (true)
             {
                 try
                 {
+                    Console.WriteLine("Введите 1 число:");
                     a = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Введите 2 число:");
                     b = Convert.ToInt32(Console.ReadLine());
 
                     Summary summary = new Summary(a, b);
@@ -21,7 +25,7 @@
                 }
                 catch (FormatException ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("Ошибка - " + ex.Message);
                 }
             }
             

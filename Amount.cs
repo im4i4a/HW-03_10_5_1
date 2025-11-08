@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace HW_03_10_5_1
 {
-    internal class Amount
-    {
-    }
-
     public interface IAmount 
     {
         void Sum(int a, int b);
