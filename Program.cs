@@ -2,11 +2,11 @@
 {
     internal class Program
     {
+        static ILogger logger = new Logger();
         static void Main(string[] args)
         {
             // Задание 1
             int a,b;
-
 
             while (true)
             {
@@ -18,18 +18,16 @@
                     Console.WriteLine("Введите 2 число:");
                     b = Convert.ToInt32(Console.ReadLine());
 
-                    Summary summary = new Summary(a, b);
+                    Summary summary = new Summary(a, b, logger);
 
-                    ((IAmount)summary).Sum(summary.A = a, summary.B = b);
-                    summary.Output();
+                    ((IAmount)summary).Sum(summary.A = a, summary.B = b, logger);
+                    summary.Output(logger);
                 }
                 catch (FormatException ex)
                 {
-                    Console.WriteLine("Ошибка - " + ex.Message);
+                    logger.Error(ex.Message);
                 }
             }
-            
-            
         }
     }
 }
